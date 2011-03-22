@@ -1,8 +1,8 @@
 Author: Meghan Clark					March 22, 2011
-Project: Meghan’s Awesome(!!!) L-System Machine
+Project: Meghan's Awesome(!!!) L-System Machine
 Language: Python
 
-Meghan’s Awesome(!!!) L-System Machine presents a graphical interface for the generation and interpretation of strings using basic and bracketed L-systems. The interpretation is somewhat open-ended, but the intention is that the primary method of visualization is Python's turtle module.
+Meghan's Awesome(!!!) L-System Machine presents a graphical interface for the generation and interpretation of strings using basic and bracketed L-systems. The interpretation is somewhat open-ended, but the intention is that the primary method of visualization is Python's turtle module.
 
 GUI FEATURES:
 
