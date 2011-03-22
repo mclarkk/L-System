@@ -32,17 +32,56 @@ Rewrite Rules: Each character in the rewrite rules must be a symbol in the alpha
 
 Interpretation Rules: A valid interpretation rule can consist of one or several whitespace-separated Python statements. The only caveat is that if you want them to actually do anything, each statement must work when evaluated by eval(). This means that you can call turtle functions like forward(5) or circle(2,180), but you can't assign values to variables or do many other useful things.
 
+For a comprehensive list of turtle commands, see http://docs.python.org/library/turtle.html#turtle-methods
+
 EXAMPLES:
 
-Koch Curve
+KOCH CURVE
 
-Sierpinski Triangle
+Alphabet:A + -
+Axiom: A
+Iterations: 4
+Start at: -200 0
+Initial heading: East
 
-Plant
+	Replacement rules:		Interpretation rules:
+A: A+A--A+A						forward(5)
++: +								left(60)
+-: -								right(60)
 
-Wonky
 
-Colorful Koch
+SIERPINSKI TRIANGLE
 
-Oh God My Eyes
+Alphabet:A B + -
+Axiom: A
+Iterations: 8
+Start at: -150 0
+Initial heading: East
 
+	Replacement rules:		Interpretation rules:
+A: B-A-B							forward(1)
+B: A+B+A							forward(1)
++: +								left(60)
+-: -								right(60)
+
+
+PLANT
+
+Alphabet:X F + -
+Axiom: X
+Iterations: 6
+Start at: 0 -300
+Initial heading: North
+
+	Replacement rules:		Interpretation rules:
+X: F-[[X]+X]+F[+FX]-X		pd()
+F: FF								forward(3)
++: +								right(25)
+-: -								left(25)
+
+
+KOCH IN COLOR
+
+Identical to the Koch curve settings, except A is interpreted as:
+
+color("blue") forward(5) color("green") circle(3,180) left(180) color("yellow") circle(3,360) left(180) color("green") circle(3,180)
