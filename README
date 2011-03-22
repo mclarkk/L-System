@@ -1,3 +1,35 @@
-Author: Meghan Clark
-March 22 2011
+Author: Meghan Clark					March 22, 2011
+Project: Meghan’s Awesome(!!!) L-System Machine
+Language: Python
 
+Meghan’s Awesome(!!!) L-System Machine presents a graphical interface for the generation and interpretation of strings using basic and bracketed L-systems. The interpretation is somewhat open-ended, but the intention is that the primary method of visualization is Python's turtle module.
+
+GUI FEATURES:
+
+You can define an L-System by specifying: 
+	
+	* an alphabet
+	* an axiom
+	* rewrite/production rules
+
+You can also specify the number of rewrite iterations. 
+
+You can define an interpretation by specifying:
+
+	* the turtle's starting point on the canvas
+	* the turtle's initial heading
+	* interpretation rules
+
+VALID INPUT:
+
+(Note - whitespace is the separator.)
+
+Alphabet: The alphabet may consist of any single-character symbols except the brackets [ and ] (and whitespace, obviously). In my implementation, the two bracket symbols are technically always in the alphabet, but they are considered reserved symbols that correspond to state save and restore operations for use with bracketed L-systems. The user cannot overwrite their rewrite or interpretation rules.
+
+Axiom: Each character in the axiom must be a symbol in the alphabet. 
+
+Rewrite Rules: Each character in the rewrite rules must be a symbol in the alphabet.
+
+Interpretation Rules: 
+
+EXAMPLES:
