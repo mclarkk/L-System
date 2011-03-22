@@ -44,10 +44,15 @@ Iterations: 4
 Start at: -200 0
 Initial heading: East
 
-	Replacement rules:		Interpretation rules:
-A: A+A--A+A						forward(5)
-+: +								left(60)
--: -								right(60)
+   Replacement rules:
+A: A+A--A+A
++: +
+-: -	
+
+   Interpretation rules:
+A: forward(5)
++: left(60)
+-: right(60)
 
 
 SIERPINSKI TRIANGLE
@@ -58,11 +63,17 @@ Iterations: 8
 Start at: -150 0
 Initial heading: East
 
-	Replacement rules:		Interpretation rules:
-A: B-A-B							forward(1)
-B: A+B+A							forward(1)
-+: +								left(60)
--: -								right(60)
+   Replacement rules:
+A: B-A-B
+B: A+B+A
++: +
+-: -
+
+   Interpretation rules:
+A: forward(1)
+B: forward(1)
++: left(60)
+-: right(60)
 
 
 PLANT
@@ -73,11 +84,17 @@ Iterations: 6
 Start at: 0 -300
 Initial heading: North
 
-	Replacement rules:		Interpretation rules:
-X: F-[[X]+X]+F[+FX]-X		pd()
-F: FF								forward(3)
-+: +								right(25)
--: -								left(25)
+   Replacement rules:		
+X: F-[[X]+X]+F[+FX]-X
+F: FF	
++: +							
+-: -
+
+   Interpretation rules:
+X: pd()
+F: forward(3)
++: right(25)
+-: left(25)
 
 
 KOCH IN COLOR
