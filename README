@@ -4,6 +4,8 @@ Language: Python
 
 Meghan's Awesome(!!!) L-System Machine presents a graphical interface for the generation and interpretation of strings using basic and bracketed L-systems. The interpretation is somewhat open-ended, but the intention is that the primary method of visualization is Python's turtle module.
 
+
+
 GUI FEATURES:
 
 You can define an L-System by specifying: 
@@ -20,11 +22,13 @@ You can define an interpretation by specifying:
 	* the turtle's initial heading
 	* interpretation rules
 
+
+
 VALID INPUT:
 
 (Note - whitespace is the separator.)
 
-Alphabet: The alphabet may consist of any single-character symbols except the brackets [ and ] (and whitespace, obviously). In my implementation, the two bracket symbols are technically always in the alphabet, but they are considered reserved symbols that correspond to state save and restore operations for use with bracketed L-systems. The user cannot overwrite their rewrite or interpretation rules.
+Alphabet: The alphabet may consist of any single-character symbols except the brackets [ and ]. In my implementation, the two bracket symbols are technically always in the alphabet, but they are considered reserved symbols that correspond to state save and restore operations for use with bracketed L-systems. The user cannot overwrite their rewrite or interpretation rules.
 
 Axiom: Each character in the axiom must be a symbol in the alphabet. 
 
@@ -33,6 +37,18 @@ Rewrite Rules: Each character in the rewrite rules must be a symbol in the alpha
 Interpretation Rules: A valid interpretation rule can consist of one or several whitespace-separated Python statements. The only caveat is that if you want them to actually do anything, each statement must work when evaluated by eval(). This means that you can call turtle functions like forward(5) or circle(2,180), but you can't assign values to variables or do many other useful things.
 
 For a comprehensive list of turtle commands, see http://docs.python.org/library/turtle.html#turtle-methods
+
+
+
+LIMITATIONS AND QUIRKS:
+
+Warning: This program is incredibly dangerous! Anything you enter as an interpretation rule will be treated like whitespace-separated lines of Python code and blindly executed by the eval() function. Certainly eval() itself has limitations which prevents particularly egregious exploits. However, it would be easy to submit and execute as an interpretation rule something in the spirit of files.deleteAll() or computer.explode(), which makes this program hilariously unsafe.
+
+If you try to generate a new L-system while the previous L-system is still being drawn, you will get unexpected behavior. The canvas will clear and the turtle will start drawing your new L-system. However, after your new L-system is finished, the turtle will continue to draw a bunch of buffered drawing commands for the previous L-system that were sent out but never drawn on the canvas. To cancel a drawing in progress, close the window as well as any extra windows that pop up afterwards (a related idiosyncrasy). Then you can generate your new L-system on a clean slate.
+
+The program does not support context-sensitive L-systems, parametric L-systems, or stochastic L-systems. However, you could stochastically interpret an L-system’s string by choosing randomly among a set of angles. For example, one of your interpretation rules could be left(random.choice([30,60,90])).
+
+
 
 EXAMPLES:
 
