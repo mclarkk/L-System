@@ -30,6 +30,19 @@ Axiom: Each character in the axiom must be a symbol in the alphabet.
 
 Rewrite Rules: Each character in the rewrite rules must be a symbol in the alphabet.
 
-Interpretation Rules: 
+Interpretation Rules: A valid interpretation rule can consist of one or several whitespace-separated Python statements. The only caveat is that if you want them to actually do anything, each statement must work when evaluated by eval(). This means that you can call turtle functions like forward(5) or circle(2,180), but you can't assign values to variables or do many other useful things.
 
 EXAMPLES:
+
+Koch Curve
+
+Sierpinski Triangle
+
+Plant
+
+Wonky
+
+Colorful Koch
+
+Oh God My Eyes
+
